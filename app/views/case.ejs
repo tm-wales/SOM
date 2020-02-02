@@ -1,0 +1,92 @@
+    <% include ./partials/header %>
+
+    <title><%= data.case.name %> | <%= data.page.title %></title>
+    <meta name="description" content="<%= data.case.text.summary %>">
+    <meta name="keywords" content="<%= data.case.name %>, <%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="caseStudy__header">
+            <div class="caseStudy__header__image" style="background-image: url('<%=data.case.imagePaths.primary %>')"></div>    
+            <div class="caseStudy__header__textbox u-container--small">
+                <h1 class="caseStudy__header__title"><%= data.case.name %></h1>
+            </div>
+        </header>
+
+        <section class="caseStudy__details u-container--small">
+            <div class="caseStudy__details__texts">
+                    <h2 class="caseStudy__header__category"><%= data.case.category %></h2>
+            <% for(var i=0; i < data.case.text.other.length; i++) { %>
+                <p class="caseStudy__details__text"><%=data.case.text.other[i]%></p>
+            <% } %>
+            </div>
+
+            <div class="caseStudy__details__main">
+                <div class="caseStudy__details__client">
+                    <span class="caseStudy__details__client__title">Client: </span>
+                    <span class="caseStudy__details__client__name"><%= data.case.client %></span>
+                </div>
+            </div>
+
+            <% if(data.case.keyFacts.length !== 0) { %>
+            <ul class="caseStudy__keyfacts__list">
+                <% for(var i=0; i < data.case.keyFacts.length; i++) { %>
+                <li class="caseStudy__keyfact">
+                    <div class="caseStudy__keyfact__main"><%= data.case.keyFacts[i].main %></div>
+                    <div class="caseStudy__keyfact__sub"><%= data.case.keyFacts[i].sub %></div>
+                </li>
+                <% } %>
+            </ul>
+            <% } %>
+
+            <ul class="caseStudy__images__list">
+            <% for(var i=0; i < data.case.imagePaths.other.length; i++) { %>
+                <li class="caseStudy__images__list__container">
+                    <div class="caseStudy__images__list__image" style="background-image: url('<%=data.case.imagePaths.other[i] %>')"></div>
+                </li>
+            <% } %>
+            </ul>
+
+            <% if(data.case.testimonials.length !== 0) { %>
+            <ul class="caseStudy__testimonials__list">
+                <% for(var i=0; i < data.case.testimonials.length; i++) { %>
+                <li class="caseStudy__testimonial">
+                    <% if(typeof data.case.testimonials[i].person.image !== 'undefined') { %>
+                    <img class="caseStudy__testimonial__image" src="<%= data.case.testimonials[i].person.image %>">
+                    <% } %>
+                    <blockquote class="caseStudy__testimonial__text">
+                        <%= data.case.testimonials[i].testimonial %>
+                    </blockquote>
+                    <div class="caseStudy__testimonial__person">
+                        <div class="caseStudy__testimonial__person__name"><%= data.case.testimonials[i].person.name %></div>
+                        <div class="caseStudy__testimonial__person__position"><%= data.case.testimonials[i].person.position %> @ <%= data.case.testimonials[i].person.company %></div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+            <% } %>
+
+            <% if(data.case.awards.length !== 0) { %>
+            <div class="caseStudy__awards">
+                <h3 class="caseStudy__awards__title">Awards & Recognitions</h3>
+                <ul class="caseStudy__awards__list">
+                    <% for(var i=0; i < data.case.awards.length; i++) { %>
+                    <li class="caseStudy__award">
+                        <img class="caseStudy__award__image" src="<%= data.case.awards[i].image %>">
+                        <div class="caseStudy__award__name"><%= data.case.awards[i].name %></div>
+                    </li>
+                    <% } %>
+                </ul>
+                <% } %>
+            </div>
+
+            <a class="caseStudy__link btn btn--primary" href="/case-studies"><div class="btn__text">Back to Case Studies</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

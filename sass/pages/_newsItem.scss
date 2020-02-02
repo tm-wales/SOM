@@ -1,0 +1,156 @@
+.newsItemPage {
+    padding: 5rem;
+    padding-top: 10rem;
+    text-align: right;
+
+    @include respond('500') {
+        padding: 3rem;
+        padding-top: 10rem;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    &__caption {
+        font-size: 1.2rem;
+        font-style: italic;
+        text-align: center;
+    }
+
+    &__header {
+        text-align: left;
+    }
+
+    &__title {
+        color: $color-primary-dark;
+        text-shadow: none;
+        font-weight: bold;
+        font-size: 2.5rem;
+        letter-spacing: .5rem;
+        text-align: center;
+        margin-top: 5rem;
+
+        @include respond('500') {
+            font-size: 2rem;
+        }
+
+        &:after {
+            display: block;
+            height: .2rem;
+            background-color: $color-primary-dark;
+            content: " ";
+            width: 20%;
+            margin: 2rem auto;
+        }
+    }
+
+    &__date {
+        font-size: 1.4rem;
+    }
+
+    &__container {
+        padding: 2rem 0;
+        text-align: left;
+    }
+
+    &__content {
+        background: rgba($color-white, .5);
+        font-size: 1.6rem;
+
+        & p {
+            margin: 2rem 0;
+        }
+
+        & li {
+            list-style-type: circle;
+            margin-left: 2rem;
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+
+        & a {
+            color: $color-primary;
+            transition: color .3s;
+            &:hover {
+                font-weight: bold;
+            }
+            &:visited {
+                color: $color-primary-dark;
+            }
+        }
+    }
+
+    &__back {
+        margin: 2rem auto;
+    }
+}
+
+// Sharing (Copy/Pasted)
+#share {
+	width: 100%;
+  	margin: 2rem auto;
+  	text-align: center;
+}
+
+/* buttons */
+
+#share a {
+    position: relative;
+	width: 5rem;
+  	height: 5rem;
+  	display: inline-block;
+  	margin: .8rem;
+  	border-radius: 50%;
+  	font-size: 2.5rem;
+  	color: #fff;
+	opacity: 0.75;
+    transition: opacity 0.15s linear;
+    
+    @include respond("500") {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+}
+
+#share a:hover {
+	opacity: 1;
+}
+
+/* icons */
+
+#share i {
+  	position: absolute;
+      top: 50%;
+      left: 50%;
+  	transform: translate(-50%,-50%);
+}
+
+/* colors */
+
+.facebook {
+ 	background: #3b5998;
+}
+
+.twitter {
+  	background: #55acee;
+}
+
+.googleplus {
+  	background: #dd4b39;
+}
+
+.linkedin {
+  	background: #0077b5;
+}
+
+.pinterest {
+  	background: #cb2027;
+}

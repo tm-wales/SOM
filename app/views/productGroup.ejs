@@ -1,0 +1,45 @@
+    <% include ./partials/header %>
+
+    <title><%= data.group.name %> | <%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="productGroupsPage__header">
+            <div class="productGroupsPage__header__image" style="background-image: url('<%= data.group.mainImagePath %>')"></div>
+            <div class="productGroupsPage__header__textbox u-container--small">
+                <h1 class="productGroupsPage__header__title"><%= data.group.name %></h1>
+            </div>
+        </header>
+
+        <section class="productGroupsPage__section u-container--mid">
+            <div class="productGroupsPage__summaryMain"><%- data.group.content.summary %></div>
+            <% for(var i=0; i < data.group.subProducts.length; i++) { %>
+                <div class="productGroupsPage__grid <%= i % 2 === 0 ? '' : 'productGroupsPage__grid--alt' %> ">
+                    <h3 class="productGroupsPage__title"><%= data.group.subProducts[i].name %></h3>
+                    <div class="productGroupsPage__summary"><%- data.group.subProducts[i].content.summary %></div>
+
+                    <ul class="productGroupsPage__keyfacts">
+                    <% if(typeof data.group.subProducts[i].content.keyFacts !== 'undefined' && data.group.subProducts[i].content.keyFacts !== 'null') { %>
+                        <% for(var j=0; j < data.group.subProducts[i].content.keyFacts.length; j++) { %>
+                            <li class="productGroupsPage__keyFact"> <%= data.group.subProducts[i].content.keyFacts[j]  %> </li>
+                        <% } %>
+                    <% } %>
+                    </ul>
+
+                    <div class="productGroupsPage__image" style="background-image: url('<%= data.group.subProducts[i].mainImagePath %>')"></div>
+                    <% if(typeof data.group.subProducts[i].content.main !== 'undefined' && data.group.subProducts[i].content.main !== 'null') { %>
+                        <a class="productGroupsPage__link btn" href='<%= data.group.name %>/<%= data.group.subProducts[i].name %>'><span class="btn__text">Learn more</span></a>
+                    <% } %>
+                </div>
+            <% } %>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

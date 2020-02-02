@@ -1,0 +1,33 @@
+
+@font-face {
+    font-family: 'Arkitech';
+    src: url('arkitech_bold-webfont.woff2') format('woff2'),
+         url('arkitech_bold-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Arkitech';
+    src: url('arkitech_bold-webfont.woff2') format('woff2'),
+         url('arkitech_bold-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: bold;
+}
+
+
+@font-face {
+    font-family: 'Arkitech';
+    src: url('arkitech_light-webfont.woff2') format('woff2'),
+         url('arkitech_light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arkitech';
+    src: url('arkitech_medium-webfont.woff2') format('woff2'),
+         url('arkitech_medium-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}

@@ -1,0 +1,49 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+            <div id="header__hero" class="header__hero header__hero--other header__hero--about" style="background-image: url('<%= data.page.content.header.backgroundImage %>')">
+                <div class="header__overlay">
+                    <div class="header__text">
+                        <h1 id="headerTitle" class="header__title__other"><%= data.page.content.headerTitle.text %></h1>
+                        <h2 id="headerSubtitle" class="header__subtitle__other"><%= data.page.content.headerSubtitle.text %></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="start" class="section section__aboutus u-container--small">
+            <h3 class="aboutus__title">About SO Modular</h3>
+            <div class="aboutus">
+                <%- data.page.content.text.text %>
+            </div>
+        </section>
+
+        <section class="section section__who u-container--small">
+            <h3 class="aboutus__who__title">Who's Who</h3>
+            <div class="aboutus__who__grid">
+            <% for(var i=0; i < data.page.content.who.length; i++) { %>
+                <div class="aboutus__who">
+                    <img src="<%= data.page.content.who[i].image %>">
+                    <div class="aboutus__who__text">
+                        <div class="aboutus__who__text__text"><%= data.page.content.who[i].text %></div>
+                        <div class="aboutus__who__text__name"><%= data.page.content.who[i].name %></div>
+                        <div class="aboutus__who__text__position"><%= data.page.content.who[i].position %></div>
+                    </div>
+                </div>
+            <% } %>
+            </div>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

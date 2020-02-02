@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<title><%= data.product.name %> | <%= data.page.title %></title>
+<meta name="description" content="<%= data.page.description %>">
+<meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+<% include ./partials/warnings %>
+<% include ./partials/nav %>
+<main>
+    <header id="header" class="productPage__header">
+        <div class="productPage__header__image" style="background-image: url('<%= data.product.mainImagePath %>')"></div>
+        <div class="productPage__header__textbox u-container--small">
+            <h1 class="productPage__header__title"><%= data.product.name %></h1>
+        </div>
+    </header>
+
+    <section class="productPage__section u-container--mid">
+        <div class="productPage__summaryMain productPage__format"><%- data.product.content.summary %></div>
+
+        <ul class="productPage__keyfacts">
+        <% if(typeof data.product.content.keyFacts !== 'undefined' && data.product.content.keyFacts !== 'null') { %>
+            <% for(var j=0; j < data.product.content.keyFacts.length; j++) { %>
+                <li class="productPage__keyFact"> <%= data.product.content.keyFacts[j]  %> </li>
+            <% } %>
+        <% } %>
+        </ul>
+
+        <div class="productPage__content productPage__format"><%- data.product.content.main %></div>
+    </section>
+</main>
+<% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

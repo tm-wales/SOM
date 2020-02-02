@@ -1,0 +1,76 @@
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin block-underline($width, $color) {
+    display: block;
+    margin: 2rem auto 0 auto;
+    height: 2px;
+    content: " ";
+    text-shadow: none;
+    background-color: $color;
+    width: $width;
+}
+
+/* Media query manager
+
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == "iphone5" {
+        @media (max-width: 320px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "Galaxy" {
+        @media (max-width: 360px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "phoneXL" {
+        @media (max-width: 400px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "ipad" {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "ipadPro" {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "common" {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "professional" {
+        @media (max-width: 1600px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "gamer" {
+        @media (min-width: 2800px) {
+            @content;
+        }
+    }
+
+    @else { // For custom display breaking points
+        @media(max-width: $breakpoint + "px") {
+            @content;
+        }
+    }
+  }
+// --------------------------

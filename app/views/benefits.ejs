@@ -1,0 +1,79 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+            <div id="header__hero" class="header__hero header__hero--other contentEditable" style="background-image: url('<%= data.page.content.header.backgroundImage %>')">
+                <div class="header__overlay">
+                    <div class="header__text">
+                        <h1 id="headerTitle" class="header__title__other contentEditable"><%= data.page.content.headerTitle.text %></h1>
+                        <h2 id="headerSubtitle" class="header__subtitle__other contentEditable"><%= data.page.content.headerSubtitle.text %></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="start" class="section__benefits">
+            <div class="benefit u-container--small">
+                <img class="benefit__image" src="/resources/img/benefits/fast.jpg"></img>
+                <div class="benefit__textbox">
+                    <div class="benefit__title">IT’S FAST</div>
+                    <div class="benefit__text">
+                        <p>Timber Frame requires between 20 and 40 % fewer on site labour days and ensures a faster construction period overall. A typical timber frame home can be wind and water tight in as little as one day regardless of the weather. </p>
+                        <p>This speed of build and build programme predictability results in a faster return on investment, reduced disruption to local communities and tidier safer construction sites.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit u-container--small">
+                <div class="benefit__textbox">
+                    <div class="benefit__title">IT’S LOW RISK</div>
+                    <div class="benefit__text">
+                        <p>
+                            Timber frame is tried and tested, and there is an ever increasing body of people and businesses in the UK who know how to use it. The National Audit Office (NAO) confirms you get more price certainty, fewer delays due to bad weather, better health and safety and a more predictable build programme. Due to the majority of the manufacturing process happening off-site this can reduce waste by 40% on average.
+                        </p>
+                    </div>
+                </div>
+                <img class="benefit__image" src="/resources/img/benefits/risk.jpg"></img>
+            </div>
+            <div class="benefit u-container--small">
+                    <img class="benefit__image" src="/resources/img/benefits/eco.jpg"></img>
+                    <div class="benefit__textbox">
+                        <div class="benefit__title">IT’S ECO-FRIENDLY</div>
+                        <div class="benefit__text">
+                            <p>
+                                Timber is effectively a carbon neutral product even
+                                allowing for transport and the lowest CO2 of any
+                                commercial building material. For every M3 of timber
+                                used instead of other building materials, 0.8 tonnes is
+                                saved from being emitted into the atmosphere.
+                            </p>
+                            <p>
+                                Timber frame homes are much more energy efficient
+                                than alternatively constructed homes meaning that they
+                                have lower running costs and in return a reduced carbon
+                                footprint. In fact a timber frame home can save up to 4
+                                Tonnes of CO2 from entering the Earth’s atmosphere.
+                            </p>
+                            <p>
+                                That’s why timber frame is the fastest growing
+                                method of construction in the UK and why hotel chains,
+                                student accommodation providers and RSLs have
+                                embraced timber frame as the first choice construction
+                                method – they can’t afford to miss deadlines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

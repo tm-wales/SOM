@@ -1,0 +1,48 @@
+let name = "Pygmy";
+let port = 3000;
+let db = "Pygmy"
+let websiteTitle = 'Sevenoaks Modular Ltd'
+
+const config = {
+    production: {
+        app: {
+            name: name,
+            port: port,
+            websiteTitle: websiteTitle
+        },
+        session: {
+            secret: '##secret##'
+        },
+        database: '##dbpath##',
+        email: {
+            service: "Outlook365",
+            auth: {
+                user: 'user@office365.com',
+                password: 'password'
+            }
+        }
+    },
+    development: {
+        app: {
+            name: name,
+            port: port,
+            websiteTitle: websiteTitle
+        },
+        session: {
+            secret: 'IseeDeadPeople'
+        },
+        database: 'mongodb://localhost:27017/' + db,
+        email: {
+            service: "Outlook365",
+            auth: {
+                user: 'user@office365.com',
+                password: 'password'
+            }
+        }
+    }
+    },
+}
+
+exports.get = function get(env) {
+    return config[env] || config.development;
+}

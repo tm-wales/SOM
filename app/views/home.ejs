@@ -1,0 +1,213 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+
+            <video id="bgvid" playsinline autoplay muted loop autobuffer controls>
+                <source id="header__video"class="header__video" src="<%= data.page.content.header.video %>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="header__box">
+                <div class="header__text">
+                    <h2 id="header__subtitle__main" class="header__subtitle__main"><%= data.page.content.headerSubtitle.text %></h2>
+                    <h1 id="header__title__main" class="header__title__main"><%= data.page.content.headerTitle.text %></h1>
+                </div>
+            </div>
+        </header>
+
+        <section class="section products">
+            <h3 class="products__title section__header">
+                What We Do
+            </h3>
+
+            <div class="product__text">
+                We have the products and expertise to do full completion timber frame structures. Each structure is fully designed with your needs and requirement first, whether they are part of our products list or if you require something unique and bespoke.
+            </div>
+
+            <div class="products__grid">
+                <% for(var i=0; i < data.products.length; i++) { %>
+                    <a class="product js--wp-fadeInLeft" href="products/<%= data.products[i].name %>">
+                        <img class="product__icon" src="<%= data.products[i].iconPath %>"></img>
+                        <div class="product__title"><%= data.products[i].name %></div>
+                    </a>
+                <% } %>
+            </div>
+
+            <a class="products__link btn btn--primary" href="/products"><div class="btn__text">View all Our Products</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+        </section>
+
+        <section class="divide center" style="background-image: url('/resources/img/divide1.jpg');">
+            <!-- <div class="divide__grid">
+                <div class="divide__text__box">
+                    <div class="divide__text__sub">Established since 1996</div>
+                    <div class="divide__text__main">Who are Sevenoaks Modular</div>
+                </div>
+
+                <a class="divide__link btn btn--inverse" href="/aboutus"><div class="btn__text">Learn more</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+            </div> -->
+            <div class="divide__section">
+                <div id="divide1" class="divide__box js--wp-fadeIn">
+                    <div class="divide__text__box">
+                        <div class="divide__text__sub">Established since 1996</div>
+                        <div class="divide__text__main">Who are Sevenoaks Modular?</div>
+                    </div>
+    
+                    <a class="divide__link btn btn--inverse" href="/aboutus"><div class="btn__text">Learn more</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section process">
+            <h3 class="process__title section__header">
+                Our Process
+            </h3>
+
+            <div class="process__text">
+                At Seven Oaks Modular, we know every customer is different and we take this in to consideration throughout the consultation process. Every quote we return we endeavour to meet the individual client’s needs and expectations, be it a self-builder building their first house to a national home builder creating 100 dwellings. Our estimating team have over a hundred years of combined experience within the construction sector and all types of builds not just in Timber Frame. They have experience quoting a full range of projects from residential to private sector to commercial and understand the need to manage costs and meet ever changing performance standards within the construction industry.
+            </div>
+
+            <div class="process__grid">
+                <div class="process__step">
+                    <img class="process__step__icon" src="resources/img/processes/estimate.png"></img>
+                    <div class="process__step__number">1</div>
+                    <div class="process__step__title">Quotation</div>
+                    <div class="process__step__text">SO Modular have its very own custom written estimating package, meaning our quotation process is fast and accurate.</div>
+                </div>
+                <div class="process__step">
+                    <img class="process__step__icon" src="resources/img/processes/design.png"></img>
+                    <div class="process__step__number">2</div>
+                    <div class="process__step__title">Design</div>
+                    <div class="process__step__text">Our dedicated team of experts endeavour to deliver your project on time, on budget and to the highest quality standards.</div>
+                </div>
+                <div class="process__step">
+                    <img class="process__step__icon" src="resources/img/processes/manufacture.png"></img>
+                    <div class="process__step__number">3</div>
+                    <div class="process__step__title">Manufacture</div>
+                    <div class="process__step__text">Our manufacturing facility boasts a 60,000 square ft capacity with the most up to date production equipment.</div>
+                </div>
+                <div class="process__step">
+                    <img class="process__step__icon" src="resources/img/processes/delivery.png"></img>
+                    <div class="process__step__number">4</div>
+                    <div class="process__step__title">Deliver</div>
+                    <div class="process__step__text">We have a proven pedigree of delivering projects the width and breadth of the UK fast and effectively within customer timescales. </div>
+                </div>
+                <div class="process__step">
+                    <img class="process__step__icon" src="resources/img/processes/build.png"></img>
+                    <div class="process__step__number">5</div>
+                    <div class="process__step__title">Build</div>
+                    <div class="process__step__text">Regardless of whether you choose a supply only option or supply and erect, we’re here to guide you through the entire process.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="divide center" style="background-image: url('/resources/img/divide2.jpg');">
+            <div class="divide__section">
+                <div id="divide2" class="divide__box js--wp-fadeIn">
+                    <div class="divide__text__box">
+                        <div class="divide__text__sub">Why Timber Frame?</div>
+                        <div class="divide__text__main">Fast, low risk & eco-friendly</div>
+                    </div>
+    
+                    <a class="divide__link btn btn--inverse" href="/benefits"><div class="btn__text">Learn more</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cases">
+            <h3 class="cases__title section__header">
+                Our work
+            </h3>
+            <div class="cases__grid">
+                <% for(var i=0; i < data.cases.length; i++) { %>
+                <a class="case case__show js--wp-cases" href="/case-studies/<%= data.cases[i].name %>">
+                    <div class="case__image" style="background-image: url('<%= data.cases[i].imagePaths.primary %>')">
+                        <div class="case__category"><%= data.cases[i].category %></div>
+                        <div class="case__hidden">
+                            <div class="case__client"><%= data.cases[i].client %></div>
+                            <div class="case__summary"><%= data.cases[i].text.summary %></div>
+                        </div>
+                    </div>
+                    <div class="case__text">
+                        <div class="case__link">
+                            <span class="case__link__text"><%= data.cases[i].name %></span> <span class="case__link__icon"><i class="fas fa-caret-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+                <a class="case case__show js--wp-cases" href="/case-studies">
+                    <div class="case__image case__all">
+                        <div class="case__hidden case__hidden--inverse">
+                            <div class="case__client">View all our case studies</div>
+                            <div class="case__summary">We have a wide range of case studies for you to see. Come take a look!</div>
+                        </div>
+                    </div>
+                    <div class="case__text case__text--inverse">
+                        <div class="case__link case__link--inverse">
+                            <span class="case__link__text">View all Case Studies</span> <span class="case__link__icon"><i class="fas fa-caret-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="divide center" style="background-image: url('/resources/img/divide3.jpg');">
+            <!-- <div class="divide__grid">
+                <div class="divide__text__box">
+                    <div class="divide__text__sub">Speak to one of our sales advisors</div>
+                    <div class="divide__text__main">Contact us now</div>
+                </div>
+
+                <a class="divide__link btn btn--inverse" href="/benefits"><div class="btn__text">Contact Us</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+            </div> -->
+            <div class="divide__section">
+                <div id="divide3" class="divide__box js--wp-fadeIn">
+                    <div class="divide__text__box">
+                        <div class="divide__text__sub">Talk to one of our Business Development Managers</div>
+                        <div class="divide__text__main">Contact us now</div>
+                    </div>
+
+                    <a class="divide__link btn btn--inverse" href="#contact-us"><div class="btn__text">Contact Us</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section news">
+            <h3 class="news__title section__header">
+                News
+            </h3>
+
+            <div class="news__grid">
+            <% for(var i=0; i < data.news.length; i++) { %>
+                <% if(data.news[i].category == 'News') { %>
+                    <a class="news__item" href="/news/<%=data.news[i].name %>" style="background-image: url('<%= data.news[i].mainImage.path %>')">
+                    <div class="news__item__image">
+                        <div class="news__item__title">
+                            <div><%= data.news[i].name %> <i class="fas fa-caret-right"></i></div>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <a class="news__item" href="">
+                    <div class="news__item__text"><%= data.news[i].content %></div>
+                    <div class="news__item__link" href="">
+                        <i class="fab fa-<%=data.news[i].category.toLowerCase()%>-square"></i>
+                    </div>
+                <% } %>
+                </a>
+            <% } %>
+            </div>
+            <a class="news__link btn btn--primary" href="/news"><div class="btn__text">Read our News</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

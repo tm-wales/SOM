@@ -1,0 +1,193 @@
+.cases {
+    // margin: 5rem;
+    text-align: center;
+    min-height: 50rem;
+
+    &__grid {
+        display: grid;
+        grid-column-gap: 5rem;
+        grid-row-gap: 5rem;
+        grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+        justify-items: center;
+
+        @include respond('ipad') {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+    }
+
+    &__link {
+        margin: 0.5rem auto;
+    }
+
+    &__filter {
+        &__item {
+            display: inline-block;
+            cursor: pointer;
+            background-color: $color-white;
+            padding: 0.75rem 1rem;
+            box-shadow: $color-shadow 0 0.5rem 1rem;
+            // border-top-left-radius: 1rem;
+            // border-bottom-right-radius: 1rem;
+            color: $color-primary-dark;
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 20rem;
+            letter-spacing: 0.1rem;
+            margin: 1rem;
+            border: 1px solid black;
+
+            &.mixitup-control-active {
+                background-color: $color-primary;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.case {
+    display: inline-block;
+    position: relative;
+    box-shadow: $color-shadow 0 0.5rem 1rem;
+    margin-top: 3rem;
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    width: 100%;
+
+    &.mix {
+        display: inline-block;
+        max-width: 35rem;
+        margin: 2rem;
+        font-size: 1.3rem;
+
+        @include respond('500') {
+            max-width: 30rem;
+        }
+        & .case__image {
+            height: 30rem;
+
+            @include respond('500') {
+                height: 25rem;
+            }
+        }
+
+        &:hover {
+            .case__hidden {
+                visibility: visible;
+                height: 60%;
+                font-size: 1rem;
+            }
+        }
+
+        & .case__category {
+            font-size: 1.2rem;
+            width: 15rem;
+            letter-spacing: 0.1rem;
+        }
+    }
+
+    &__all {
+        background-size: cover;
+        background-image: url('/resources/img/viewAllCases.png');
+    }
+
+    &__image {
+        background-size: cover;
+        overflow: hidden;
+        padding: 1rem;
+        height: 40rem;
+        @include respond('500') {
+            height: 30rem;
+        }
+    }
+
+    &__text {
+        position: relative;
+        text-align: left;
+        background-color: $color-white;
+        padding: 0.5rem 1rem;
+        z-index: 1;
+
+        &--inverse {
+            background-color: $color-primary-dark;
+        }
+    }
+
+    &__category {
+        background-color: $color-primary;
+        width: 20rem;
+        padding: 0.5rem 1rem;
+        box-shadow: $color-shadow 0 0.5rem 1rem;
+        color: $color-white;
+        letter-spacing: 0.2rem;
+        border: 1px solid $color-grey-light;
+    }
+
+    &__link {
+        color: $color-primary-dark;
+
+        &--inverse {
+            color: $color-white;
+            background-color: $color-primary-dark;
+        }
+
+        &__icon {
+            margin-top: 0.3rem;
+            float: right;
+        }
+    }
+
+    &__hidden {
+        position: absolute;
+        text-align: left;
+        background-color: rgba($color-primary-dark, 0.9);
+        height: 0px;
+        bottom: 0rem;
+        padding: 1rem 2rem 0 2rem;
+        left: 0;
+        width: 100%;
+        transition: 0.5s height;
+        z-index: 1;
+        color: $color-white;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+
+        &--inverse {
+            background-color: rgba($color-white, 0.9);
+            color: $color-primary-dark;
+        }
+    }
+
+    &__client {
+        text-transform: uppercase;
+        margin: 1rem 0;
+
+        &:after {
+            display: block;
+            height: 0.2rem;
+            background-color: $color-white;
+            content: ' ';
+            width: 20%;
+            margin: 0.7rem 0;
+        }
+    }
+
+    &__summary {
+        font-weight: 300;
+    }
+
+    &:hover {
+        .case__hidden {
+            visibility: visible;
+            height: 50%;
+
+            @include respond('500') {
+                height: 60%;
+            }
+        }
+    }
+}

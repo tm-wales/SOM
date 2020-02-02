@@ -1,0 +1,42 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+            <div id="header__hero" class="header__hero header__hero--other" style="background-image: url('<%= data.page.content.header.backgroundImage %>')">
+                <div class="header__overlay">
+                    <div class="header__text">
+                        <h1 id="headerTitle" class="header__title__other"><%= data.page.content.headerTitle.text %></h1>
+                        <h2 id="headerSubtitle" class="header__subtitle__other"><%= data.page.content.headerSubtitle.text %></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="productsPage__section u-container--mid">
+        <% for(var i=0; i < data.products.length; i++) { %>
+            <div class="productsPage__product">
+                <a class="productsPage__link" href="/products/<%= data.products[i].name %>">
+                    <div class="productsPage__grid">
+                        <div class="productsPage__image" style="background-image: url('<%= data.products[i].mainImagePath %>')"></div>
+                        <div class="productsPage__content">
+                            <h3 class="productsPage__title"><%= data.products[i].name %></h3>
+                            <div class="productsPage__summary"><%- data.products[i].content.summary %></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% } %>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

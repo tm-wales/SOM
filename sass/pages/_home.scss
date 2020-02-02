@@ -1,0 +1,194 @@
+.products {
+    max-width: 150rem;
+    margin: 0 auto;
+    text-align: right;
+    padding-top: 0 !important;
+    margin-top: 5rem;
+
+    &__grid {
+        padding: 3rem;
+        display: grid;
+        grid-column-gap: 5rem;
+        grid-row-gap: 5rem;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__link {
+        margin-top: 3rem;
+    }
+
+    @include respond('900') {
+        margin-top: 2.5rem;
+    }
+}
+
+.product {
+    text-decoration: none;
+    // border: 2px solid $color-primary;
+    background-color: $color-white;
+    transition: all 0.6s;
+    border: 1px solid transparent;
+
+    &:hover {
+        border: 1px solid $color-primary;
+    }
+
+    &__icon {
+        width: auto;
+        height: 18rem;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: $color-primary-dark;
+    }
+
+    &__text {
+        text-align: left;
+        margin: 3rem 0;
+    }
+}
+
+.process {
+    max-width: 150rem;
+    margin: 0 auto;
+    background: rgba($color-white, 0.6);
+
+    &__grid {
+        display: grid;
+        grid-column-gap: 5rem;
+        grid-row-gap: 5rem;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        justify-content: center;
+    }
+
+    &__text {
+        margin: 3rem 0;
+    }
+
+    &__step {
+        margin: 2rem 0;
+        text-align: center;
+
+        &__icon {
+            height: 10rem;
+            width: auto;
+            margin: 0 auto;
+        }
+
+        &__number {
+            font-family: 'Arkitech', sans-serif;
+            color: $color-black;
+            font-weight: bold;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        &__title {
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+            color: $color-primary-dark;
+        }
+
+        &__text {
+            text-align: left;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.news {
+    text-align: right;
+    margin: 0rem auto;
+    max-width: 150rem;
+
+    &__grid {
+        display: grid;
+        margin: 0 auto;
+        grid-column-gap: 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        justify-items: center;
+    }
+
+    &__link {
+        margin-top: 3rem;
+    }
+
+    &__item {
+        position: relative;
+        margin-top: 3rem;
+        height: 20rem;
+        width: 100%;
+        max-width: 35rem;
+        background-color: $color-white;
+        font-size: 1.3rem;
+        border: 1px solid $color-primary;
+        text-align: left;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        &__image {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            padding: 1rem 0;
+            overflow: hidden;
+            color: $color-white;
+            background-image: linear-gradient(
+                175deg,
+                transparent 0%,
+                transparent 65%,
+                $color-primary-dark 66%,
+                $color-primary-dark 100%
+            );
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        &__title {
+            position: absolute;
+            right: 0;
+            bottom: 0.5rem;
+            padding: 0.5rem 1rem;
+            margin-right: 1rem;
+            text-align: right;
+        }
+
+        &__link {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            // background-color: $color-primary;
+            color: $color-primary;
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+            font-size: 2.5rem;
+
+            transition: 0.2s all;
+
+            &:hover {
+                color: $color-primary-clear;
+            }
+        }
+
+        &__text {
+            margin: 1rem;
+            color: $color-text-dark;
+        }
+
+        &:hover,
+        &:active {
+            & .news__item__image {
+                color: $color-primary-clear;
+            }
+        }
+    }
+}

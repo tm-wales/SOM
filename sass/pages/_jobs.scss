@@ -1,0 +1,104 @@
+.jobsPage {
+    &__mainText {
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: center;
+
+        & a {
+            color: $color-primary;
+            font-weight: bold;
+            &:hover {
+                color: $color-primary-dark;
+            }
+        }
+    }
+    
+    &__container {
+        margin: 5rem auto;
+    }
+
+    & .job {
+        &__item {
+            margin: 5rem auto;
+            border: 2px solid rgba($color-primary,.6);
+            background-color: $color-white;
+        }
+        &__header {
+            background-color: $color-primary-dark;
+            color: $color-white;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            & > * {
+                display:inline-block;
+                margin-right: 5rem;
+                text-align: center;
+            }
+        }
+
+        &__details {
+            padding: 2rem;
+
+            & p {
+                margin: 1rem 0;
+            }
+
+            & a {
+                color: $color-primary;
+                font-weight: bold;
+                &:hover {
+                    color: $color-primary-dark;
+                }
+            }
+
+            &__location {
+                display:inline-block;
+                font-weight: bold;
+            }
+
+            &__date {
+                float: right;
+
+                &:after {
+                    content: " ";
+                    display:block;
+                }
+            }
+
+            &__description {
+                margin-top: 3rem;
+            }
+
+            &__resp,
+            &__req,
+            &__package {
+                margin-top: 3rem;
+                
+                & div {
+                    font-weight: bold;
+                }
+            }
+
+            & li {
+                margin-left: 2rem;
+                &:before {
+                    content: "\25C6";
+                    color: $color-primary-dark; /* or whatever color you prefer */
+                    padding-right: 1rem;
+                    font-size: inherit;
+                }
+            }
+
+            &__package {
+                &__details {
+                    margin-left: 2rem;
+                }
+            }
+
+            &__contact {
+                margin-top: 3rem;
+            }
+        }
+    }
+}

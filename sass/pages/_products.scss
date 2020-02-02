@@ -1,0 +1,304 @@
+.productsPage {
+    &__section {
+        padding: 5rem;
+
+        @include respond('500') {
+            padding: 1rem 3rem;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-areas: 'i c';
+
+        &--swap {
+            grid-template-areas: 'c i';
+        }
+
+        @include respond('500') {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                'c'
+                'i';
+        }
+    }
+
+    &__product {
+        margin: 5rem 0;
+        overflow: hidden;
+        border: 1px solid $color-products-border;
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+            & .productsPage__title {
+                background-position: 100%;
+            }
+        }
+    }
+
+    &__content {
+        grid-area: c;
+        background-color: $color-white;
+    }
+
+    &__image {
+        grid-area: i;
+        height: 30rem;
+        width: 40rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-top-left-radius: 5rem;
+        border-right: 1px solid $color-products-border;
+
+        @include respond('500') {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        font-size: 2rem;
+        padding: 0.5rem;
+        background-color: $color-primary-dark;
+        background-image: linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 50%,
+            $color-primary 50%
+        );
+        background-size: 230%;
+        transition: all 0.5s;
+        color: $color-white;
+        margin: 0;
+        text-transform: none;
+        text-shadow: 1px 1px 2px $color-secondary;
+        letter-spacing: 0.3rem;
+    }
+
+    &__summary {
+        font-size: 1.6rem;
+        padding: 2rem;
+        height: 100%;
+        color: $color-black;
+    }
+}
+
+.productGroupsPage {
+    &__header {
+        background: rgba($color-white, 0.6);
+        text-align: center;
+
+        &__textbox {
+            margin-top: 4rem;
+        }
+
+        &__image {
+            height: 50vh;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        &__title {
+            color: $color-primary-dark;
+            text-shadow: none;
+            font-weight: bold;
+            font-size: 2.5rem;
+            letter-spacing: 0.5rem;
+        }
+    }
+
+    &__section {
+        padding: 2rem 5rem;
+        @include respond('500') {
+            padding: 1rem 3rem;
+        }
+    }
+
+    &__summaryMain {
+        margin-bottom: 5rem;
+    }
+
+    &__grid {
+        margin-bottom: 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: $color-white;
+        border: 1px solid $color-products-border;
+        grid-template-areas:
+            't t'
+            's s'
+            'k i'
+            'l i';
+
+        &--alt {
+            grid-template-areas:
+                't t'
+                's s'
+                'i k'
+                'i l';
+
+            & .productGroupsPage__link {
+                justify-self: end;
+            }
+        }
+
+        @include respond('700') {
+            grid-template-areas:
+                't t'
+                's s'
+                'k k'
+                'i i'
+                'l l';
+
+            & .productGroupsPage__link {
+                justify-self: center;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        padding: 0.5rem;
+        background-color: $color-primary-dark;
+        font-weight: bold;
+        grid-area: t;
+        margin: 0;
+        color: $color-white;
+        text-shadow: 1px 1px 2px $color-secondary;
+        text-transform: none;
+        letter-spacing: 0.3rem;
+    }
+
+    &__summary {
+        grid-area: s;
+        padding: 2rem 1.5rem;
+    }
+
+    &__keyfacts {
+        grid-area: k;
+        padding: 2rem 3rem;
+
+        & li {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+
+            @include respond('700') {
+                padding-left: 2rem;
+            }
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '\25C6';
+                color: $color-primary-dark; /* or whatever color you prefer */
+                font-size: inherit;
+            }
+        }
+    }
+
+    &__image {
+        grid-area: i;
+        min-height: 40rem;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__link {
+        grid-area: l;
+        align-self: end;
+        justify-self: start;
+        margin: 1.5rem;
+    }
+}
+
+.productPage {
+    &__header {
+        background: rgba($color-white, 0.6);
+        text-align: center;
+
+        &__textbox {
+            margin-top: 4rem;
+        }
+
+        &__image {
+            height: 50vh;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        &__title {
+            color: $color-primary-dark;
+            text-shadow: none;
+            font-weight: bold;
+            font-size: 2.5rem;
+            letter-spacing: 0.5rem;
+        }
+    }
+
+    &__section {
+        text-align: center;
+        padding: 2rem 5rem;
+        @include respond('500') {
+            padding: 1rem 3rem;
+        }
+    }
+
+    &__summaryMain {
+        margin-bottom: 5rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        padding: 1.5rem;
+        background-color: $color-primary-dark;
+        font-weight: bold;
+        grid-area: t;
+        margin: 0;
+        color: $color-white;
+        text-shadow: 1px 1px 2px $color-secondary;
+        text-transform: none;
+        letter-spacing: 0.3rem;
+    }
+
+    &__keyfacts {
+        display: inline-block;
+        padding: 2rem 3rem;
+        // background-color: $color-primary-dark;
+
+        & li {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            padding: 1rem 2rem;
+            margin: 1rem;
+            font-size: 2rem;
+            color: $color-white;
+            background-color: $color-primary-dark;
+            font-weight: 300;
+            border-top-left-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+            // box-shadow: 1rem 1rem 3rem $color-shadow;
+
+            @include respond('700') {
+                display: block;
+                padding-left: 2rem;
+                padding-right: 1rem;
+            }
+        }
+    }
+}

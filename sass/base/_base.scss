@@ -1,0 +1,49 @@
+
+/*        Base        */
+/* ------------------ */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 70%; // defines what 1 rem is
+    @include respond("ipad") {
+        font-size: 62.5%; // defines what 1 rem is
+    }
+    @include respond("professional") {
+        font-size: 50%; // defines what 1 rem is
+    }
+    background-color: white;
+}
+
+body.app {
+    position: relative;
+    box-sizing: border-box;
+    background-color: $color-white;
+    color: $color-text-dark;
+    overflow-x: hidden;
+    background-image: linear-gradient(
+        rgba($color-white, 0.9),
+        rgba($color-white, 0.9)
+      ),url('/resources/img/tmpblueprintbackground.jpg');
+    background-attachment: fixed;
+}
+
+button {
+    border-color: black;
+    background-color: white;
+    padding: .8rem 1.2rem;
+}
+
+button:focus {
+    outline: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+/* ------------------ */

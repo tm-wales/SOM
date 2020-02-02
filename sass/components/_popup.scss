@@ -1,0 +1,189 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color-black, 0.8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+
+    &__show--js {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__box {
+        @include abs-center;
+        background: $color-white;
+        box-shadow: 0 2rem 4rem $color-shadow;
+        width: 90%;
+        max-width: 130rem;
+        height: 55rem;
+        border-radius: 3px;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        transition: all 0.5s 0.2s;
+    }
+
+    &__show--js .popup__box {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    &__grid {
+        display: inline-block;
+        display: grid;
+        grid-template-areas:
+            'l r'
+            'l r';
+        height: 100%;
+        width: 100%;
+    }
+
+    &__close {
+        color: $color-grey-dark;
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        font-size: 4rem;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 1000;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &__content {
+        padding: 4rem;
+        position: relative;
+        overflow: hidden;
+
+        &--left {
+            grid-area: l;
+            background-image: linear-gradient(
+                    rgba($color-black, 0.5),
+                    rgba($color-black, 0.3)
+                ),
+                url('/resources/img/divide1.jpg');
+            background-color: rgba($color-black, 0.8);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &--right {
+            grid-area: r;
+            background-image: linear-gradient(
+                    rgba($color-white, 0.5),
+                    rgba($color-white, 0.3)
+                ),
+                url('/resources/img/footerbackground.jpg');
+            background-color: rgba($color-white, 0.8);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &__contact {
+            position: relative;
+            display: block;
+            color: $color-primary;
+            text-decoration: none;
+            text-align: center;
+            max-width: 25rem;
+            margin: 1rem auto;
+            transition: all 0.5s;
+            border-radius: 100px;
+            padding: 1rem;
+            font-size: 1.6rem;
+            overflow: hidden;
+
+            & i {
+                font-size: 3rem;
+            }
+
+            &--address {
+                display: block;
+                border-radius: 1rem;
+                padding: 2rem;
+
+                & p {
+                    text-align: center;
+                }
+            }
+
+            &:hover {
+                color: $color-white;
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    @include respond('ipad') {
+        &__box {
+            height: 90%;
+        }
+
+        &__grid {
+            @include respond('ipad') {
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr 5fr;
+                grid-template-areas:
+                    'r'
+                    'l';
+            }
+        }
+
+        &__close {
+            top: 1rem;
+            right: 2rem;
+        }
+
+        &__content {
+            padding: 1rem;
+
+            & p {
+                display: inline;
+            }
+
+            &__contact {
+                margin: 0 auto;
+                padding: 1rem;
+                font-size: 1.3rem;
+                max-width: 100rem;
+
+                & i {
+                    font-size: 1.6rem;
+                }
+
+                & .hide {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.contactus-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    color: $color-white;
+    border-radius: 50%;
+    background-color: $color-primary-dark;
+    font-size: 2rem;
+    padding: 1rem;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    transition: 0.3s all;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-primary;
+    }
+}

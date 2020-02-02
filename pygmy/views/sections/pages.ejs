@@ -1,0 +1,37 @@
+<div class="pyg__pages">
+    <div class="pyg__pages__name">
+        <%= data.name  %>
+    </div>
+    <div class="pyg__pages__pageDetails">
+        <div class="pyg__pages__valueName">Page Title: </div>
+        <div class="pyg__pages__value" contenteditable="true"><%= data.title %></div>
+    </div>
+    <div class="pyg__pages__pageDetails">
+        <div class="pyg__pages__valueName">Description: </div>
+        <div class="pyg__pages__value" contenteditable="true"><%= data.description %></div>
+    </div>
+    <div class="pyg__pages__pageDetails">
+        <div class="pyg__pages__valueName">Keywords: </div>
+        <div class="pyg__pages__value" contenteditable="true"><%= data.keywords %></div>
+    </div>
+
+    <div class="pyg__pages__content">
+        <% if (data.content !== null && data.content !== undefined) { %>
+            <% const entries = Object.entries(data.content) %>
+            <% if (entries.length > 0 ) { %>
+                <% for(var i=0; i < entries.length; i++) { %>
+                    <div class="pyg__pages__content__group">
+                        <div class="pyg__pages__content__group__name"><%= entries[i][0] %></div>
+                        <% const entries2 = Object.entries(entries[i][1]) %>
+                        <% for(var j=0; j < entries2.length; j++) { %>
+                            <div class="pyg__pages__content__property__<%= entries2[j][0] %>">
+
+                                <div class="pyg__pages__content__value" contenteditable="true"><%= entries2[j][1] %></div>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            <% } %>
+        <% } %>
+    </div>
+</div>

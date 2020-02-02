@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<title>Pygmy by Techmeleon</title>
+<meta name="description" content="Pygmy is Techmeleon's CMS.">
+<meta name="keywords" content="Pygmy, Techmeleon, Node CMS ">
+</head>
+
+<body id="fouc" class="body pyg">
+    <div class="pyg__login">
+        <img class="pyg__login__logo" src="/vendors/pygmy/img/logo/logo-full.svg" alt="Pygmy Logo">
+        <form class="pyg__login__form" action="/tm/pygmy/login" method="POST">
+            <input required type="text" name="username" placeholder="Username">
+            <input required type="password" name="password" placeholder="Password">
+            <button type="submit">
+                <div class="pyg__login__text">Login</div>
+                <div class="pyg__login__run"></div>
+            </button>
+        </form>
+    </div>
+</body>
+
+<% include ./partials/scriptsFooter %>
+

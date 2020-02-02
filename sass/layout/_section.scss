@@ -1,0 +1,7 @@
+.section {
+    padding: 5rem;
+
+    @include respond('phoneXL') {
+        padding: 2.5rem;
+    }
+}

@@ -1,0 +1,29 @@
+<!-- Header Scripts -->
+
+    <!-- Pygmy -->
+    <script>
+        var googleAnalyticsID = "<%= data.settings.googleAnalyticsID %>"
+    </script>
+    <script type="text/javascript" src="/vendors/pygmy/pygmy-header-1.0.0.js"></script>
+    <!-- End Pygmy -->
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= data.settings.googleAnalyticsID %>"></script>
+    <script>
+        runGA = () => {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config',googleAnalyticsID);
+        }
+        runGA();
+    </script>
+
+    <!-- End Google Analytics -->
+
+    <!-- Others -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- End Others -->
+
+<!-- End Header Scripts -->

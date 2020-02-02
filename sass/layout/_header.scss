@@ -1,0 +1,170 @@
+.header {
+    position: relative;
+    &__vimeo {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        height: auto;
+        & iframe,
+        & object,
+        & embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__hero {
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100vw;
+        height: auto;
+        z-index: 0;
+
+        &--main {
+            overflow: hidden;
+        }
+        &--other {
+            height: 70vh;
+            width: 100%;
+        }
+        &--about {
+            background-position: center top;
+        }
+
+        &__video {
+            width: 100vw;
+            height: auto;
+        }
+        // @include respond('ipad') {
+        //     height: 60vh;
+        //     &--other {
+        //         height: 50vh;
+        //     }
+
+        //     &--about {
+        //         background-position: center center;
+        //     }
+        // }
+
+        // @include respond('phoneXL') {
+        //     height: 40vh;
+        //     &--other {
+        //         height: 40vh;
+        //     }
+
+        //     &--about {
+        //         height: 55vh;
+        //     }
+        // }
+    }
+
+    &__btn {
+        margin-top: 3rem;
+    }
+
+    &__box {
+        position: relative;
+        // padding: 0.5rem;
+        background: linear-gradient(
+            135deg,
+            $color-primary-dark,
+            $color-primary
+        );
+        margin-top: -1rem;
+        font-weight: bold;
+    }
+
+    &__overlay {
+        position: absolute;
+        bottom: 0rem;
+        right: 0;
+
+        text-align: center;
+        width: 100%;
+        background-color: $color-primary-dark;
+        color: $color-white;
+        padding: 0.5rem 5rem;
+
+        @include respond('ipad') {
+            // padding: 0 0rem 0 5rem;
+        }
+    }
+
+    &__title {
+        &__main {
+            text-align: center;
+        }
+
+        &__other {
+            text-align: center;
+            // color: $color-black;
+            text-shadow: none;
+            font-weight: bold;
+            font-size: 2.5rem;
+
+            @include respond('ipad') {
+                font-size: 2rem;
+            }
+
+            @include respond('phoneXL') {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &__subtitle {
+        &__main {
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        &__other {
+            text-align: center;
+            // color: $color-black;
+            text-shadow: none;
+            font-size: 1.8rem;
+            // margin-right: 2rem;
+            letter-spacing: 0.2rem;
+            font-weight: 400;
+
+            @include respond('ipad') {
+                font-size: 1.6rem;
+            }
+
+            @include respond('phoneXL') {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__subtitle {
+        padding: 1rem 0;
+    }
+}
+
+#bgvid {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // -webkit-transform: translateX(-50%) translateY(-50%);
+    // transform: translateX(-50%) translateY(-50%);
+    // min-width: 100%;
+    // min-height: 100%;
+    // width: auto;
+    // height: auto;
+    // overflow: hidden;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+
+    @include respond('ipad') {
+        margin-top: 6rem;
+    }
+}

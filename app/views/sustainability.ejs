@@ -1,0 +1,118 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+            <div id="header__hero" class="header__hero header__hero--other" style="background-image: url('<%= data.page.content.header.backgroundImage %>')">
+                <div class="header__overlay">
+                    <div class="header__text">
+                        <h1 id="headerTitle" class="header__title__other"><%= data.page.content.headerTitle.text %></h1>
+                        <h2 id="headerSubtitle" class="header__subtitle__other"><%= data.page.content.headerSubtitle.text %></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="start" class="section__benefits">
+            <div class="benefit u-container--small">
+                <img class="benefit__image" src="/resources/img/products/sub_products/trisowarm.png"></img>
+                <div class="benefit__textbox">
+                    <div class="benefit__title">TRISOWARM</div>
+                    <div class="benefit__text">
+                        <p>Developed by and exclusive to Sevenoaks Modular, this is a fully insulated, environmentally friendly traditional timber-frame wall panel.  </p>
+                        <p>More information on Trisowarm can be found <a href="/products/Timber%20Frame/Trisowarm">here</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit u-container--small">
+                <div class="benefit__textbox">
+                    <div class="benefit__title">ACTIVE HOMES</div>
+                    <div class="benefit__text">
+                        <p>This development of 16 residential units for Pobl Group, and working in partnership with SPECIFIC Innovation and Knowledge Centre, based at Swansea University, is designed to be an exemplar low cost “energy positive” scheme.  It incorporates integrated renewable technologies and energy efficient materials to create “Buildings as Power Stations”, which can generate, store and release their own energy. Our Trisowarm product is at the heart of these 16 residential units being the core timber structure on this development.</p>
+                        <p>The Brownfield Site (formerly a care home), close to Neath town centre has been redeveloped to provide 8  2 & 3 bedroom houses and 8 1 bedroom apartments, all to DQR 2005 and Lifetime Homes standards. The fundamental design principles for the ‘Buildings as Power Stations’ model is to adopt a ‘fabric first’ approach, akin to Passivhaus and to maximise solar gain for energy generation. Therefore, the orientation and layout of dwellings is a critical consideration.  Materials are then carefully selected for their energy generation / storage potential.</p>
+                        <p>A combination of transpired solar collector (TSC) cladding, integrated photovoltaic roof covering, air source heat pumps and battery storage, allows ‘the solar energy’ to be collected, stored and released to meet the energy demands of the dwellings and their occupants.</p>
+                    </div>
+                </div>
+                <img class="benefit__image" src="/resources/img/sustainability/activehomes.jpg"></img>
+            </div>
+            <div class="benefit u-container--small">
+                <img class="benefit__image" src="/resources/img/sustainability/pefc.png"></img>
+                <div class="benefit__textbox">
+                    <div class="benefit__title">FSC & PEFC ACCREDITATION</div>
+                    <div class="benefit__text">
+                        <p>
+                            We have both FSC and PEFC accreditation.
+                        </p>
+                        <p>
+                            The Forest Stewardship Council (FSC) is an international organisation that promotes responsible forest management, whilst the Programme for the Endorsement of Forest Certification (PEFC) provides worldwide certification for forestry management companies.
+                        </p>
+                        <p>
+                            As a business who works with timber that is sourced from various locations, we aim to work with forestry companies that can prove that they manage their forest in a responsible way. Working with suppliers who are members of the FSC and PEFC means that we can be confident about the sourcing of our timber and wood-based products.
+                        </p>
+                        <p>
+                            In addition, having these marks means that we can label our products accordingly; from this our Customers can see that the wood products we supply can be traced back to a renewable and responsible source. It also shows that the final product has been implemented with due respect for the environment, plus matching economic and social standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit u-container--small">
+                <div class="benefit__textbox">
+                    <div class="benefit__title">CAR SHARE & BICYCLE & HYBRID VEHICLES</div>
+                    <div class="benefit__text">
+                        <p>A number of our employees take part in car sharing which offers a way of reducing solo occupancy car journeys. Every time this is done, it is helping to reduce fuel consumption. In addition to this, some of our employees cycle to and from work, also aiding in the reduction of congestion and pollution, whilst also reducing the number of cars on the roads, saving money and protecting the environment. </p>
+                        <p>We currently have 2 hybrid vehicles within our company with the plan for next year to introduce a hybrid vehicle policy where all employees’ vehicles are hybrids;</p>
+                        <ul>
+                            <li>•	Hybrids do not use a lot of gas - This causes them to have less emission gases (discusses next) which will help save the environment and also helps reserve some of the worlds natural oil resources.</li>
+                            <li>•	Hybrids have less emission gases -  Global warming has become a huge concern for our world. Hybrids burn and use less fuel so this reduces the amount of emissions a hybrid vehicle gives off. This is helping to protect our ozone.</li>
+                            <li>•	Hybrids burn and use less fuel so this reduces the amount of emissions a hybrid vehicle gives off. This is helping to protect our ozone - Electricity does not harm the environment and because they can produce their own electricity there is no need to uses up anymore of our natural resources to build charging stations for the hybrids. 
+                            <li>•	Hybrids do not release as much smoke as a conventional car or near as many pollutants as a conventional car releases into the air. This helps to reduce the amount of smog. </li>
+                        </ul>
+                    </div>
+                </div>
+                <img class="benefit__image" src="/resources/img/sustainability/hybrid.jpg"></img>
+            </div>
+            <div class="benefit u-container--small">
+                <img class="benefit__image" src="/resources/img/sustainability/solar.jpg"></img>
+                <div class="benefit__textbox">
+                    <div class="benefit__title">PROVIDING SOLAR POWERED HOMES</div>
+                    <div class="benefit__text">
+                        <p>
+                            Energy efficient townhouses have been built in Swansea using Solar PV on roofs and that together with Trisowarm, has meant lower energy bills for tenants.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit u-container--small">
+                <div class="benefit__textbox">
+                    <div class="benefit__title">MODULAR</div>
+                    <div class="benefit__text">
+                        <p>One of the main reasons for our re-branding to Sevenoaks modular is the sustainability credentials associated with modular. Unlike traditionally built structures, both modular and portable buildings are manufactured off-site, which makes them more environmentally friendly. Reports and data analysis suggest that up to 67% less energy is needed to produce a modular building than a traditionally built structure of the same size. With our factory’s energy consumption being solely run on our waste timber our figure compared to the energy needed to build a traditional structure comes in around 40%.</p>
+                        <p>Portable buildings are delivered to site pre-assembled, which keeps site deliveries to a minimum, helping to reduce road miles and vehicle emissions associated with traditional construction projects.</p>
+                        <p>Whilst modular buildings do need to be assembled on site, this process is significantly shorter and less energy-intensive than traditional building, and you can still reduce vehicle movements on site by up to 90%, resulting in huge savings on your carbon footprint and emissions.</p>
+                    </div>
+                </div>
+                <img class="benefit__image" src="/resources/img/products/mainImages/modular.jpg"></img>
+            </div>
+            <div class="benefit u-container--small">
+                <img class="benefit__image" src="/resources/img/sustainability/biomass.jpg"></img>
+                <div class="benefit__textbox">
+                    <div class="benefit__title">NO TIMBER WASTE</div>
+                    <div class="benefit__text">
+                        <p>Ever since 1996, when parent company Hale was established, the company has striven to be as sustainably responsible as possible. It’s a core value of ours which is reflected in how we design our energy efficient homes and how we run our Neath based business.</p>
+                        <p>Alongside putting in place robust methods that ensure sustainability principles are equal across the business, we also strive to be innovative and think outside the box. For example, we installed biomass boilers to heat our Neath headquarters where Sevenoaks and Hale staff work. To fuel the boilers, we use offcuts from the Sevenoaks factory. Not only does this ensure that resources are not wasted, it also saves on our energy consumption. Our energy consumption is solely run on waste timber.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

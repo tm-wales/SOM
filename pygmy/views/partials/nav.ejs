@@ -1,0 +1,85 @@
+<div class="pyg__navigation">
+    <div class="pyg__navigation__container">
+        <a href="https://www.techmeleon.co.uk" class="pyg__navigation__logo">
+            <img class="pyg__navigation__logo__image large" src="/vendors/pygmy/img/logo/logo-full.svg" alt="logo">
+            <img class="pyg__navigation__logo__image small" src="/vendors/pygmy/img/logo/Final_Logo.svg" alt="logo">
+        </a>
+
+        <div class="pyg__navigation__toggle">
+            <% include ../components/colourfulSwitch %>
+        </div>
+
+        <nav class="pyg__navigation__nav">
+            <ul class="pyg__navigation__list">
+                <li class="pyg__navigation__item pyg__navigation__highlight active">
+                    <a class="pyg__navigation__link" href="/tm/pygmy/section/home/x">
+                        <i class="fas fa-home"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="pyg__navigation__item">
+                    <div class="pyg__navigation__group collapsed">
+                        <i class="fas fa-table"></i>
+                        <p>Content <i class="fas fa-caret-down"></i></p>
+                        <ul>
+                        <% Object.keys(data.model).forEach(key => { %>
+                            <% if (data.model[key].custom) { %>
+                                <li class="pyg__navigation__highlight">
+                                    <a class="pyg__navigation__link group" href="/tm/pygmy/section/content/<%= data.model[key].editRoute %>">
+                                        <p><%= key %></p>
+                                    </a>
+                                </li>
+                            <% } %>
+                        <% }); %>
+                        </ul>
+                    </div>
+                </li>
+                <li class="pyg__navigation__item">
+                    <div class="pyg__navigation__group collapsed">
+                        <i class="fas fa-file-alt"></i>
+                        <p>Pages <i class="fas fa-caret-down"></i></p>
+                        <ul>
+                        <% for(var i=0; i < data.pages.length; i++) { %>
+                            <li class="pyg__navigation__highlight">
+                                <a class="pyg__navigation__link group" href="/tm/pygmy/section/pages/<%= data.pages[i].name %>">
+                                    <p><%= data.pages[i].name %></p>
+                                </a>
+                            </li>
+                        <% } %>
+                        </ul>
+                    </div>
+                </li>
+                <li class="pyg__navigation__item pyg__navigation__highlight">
+                    <a class="pyg__navigation__link" href="/tm/pygmy/section/policies/x">
+                        <i class="fas fa-gavel"></i>
+                        <p>Policies</p>
+                    </a>
+                </li>
+                <li class="pyg__navigation__item pyg__navigation__highlight">
+                    <a class="pyg__navigation__link" href="/tm/pygmy/section/social/x">
+                        <i class="far fa-newspaper"></i>
+                        <p>Social Media</p>
+                    </a>
+                </li>
+                <li class="pyg__navigation__item pyg__navigation__highlight">
+                    <a class="pyg__navigation__link" href="/tm/pygmy/section/users/x">
+                        <i class="fas fa-users"></i>
+                        <p>Users</p>
+                    </a>
+                </li>
+                <li class="pyg__navigation__item pyg__navigation__highlight">
+                    <a class="pyg__navigation__link" href="/tm/pygmy/section/settings/x">
+                        <i class="fas fa-cog"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="pyg__navigation__logout">
+            <a class="pyg__navigation__link logout" href="/tm/pygmy/logout/">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Logout</p>
+            </a>
+        </div>
+    </div>
+</div>

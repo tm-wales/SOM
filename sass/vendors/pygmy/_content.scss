@@ -1,0 +1,144 @@
+.pyg__content {
+    &__cases {
+        margin: 5rem;
+
+        & .title {
+            margin: 3rem;
+
+            & h1 {
+                color: $color-pyg-primary;
+                text-shadow: none;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            &:after {
+                display: block;
+                height: .2rem;
+                background-color: $color-pyg-primary;
+                content: " ";
+                width: 50%;
+                margin: 3rem auto;
+            }
+        }
+
+        & .list {
+            margin: 3rem;
+
+            & .panel {
+                margin-bottom: 1rem;
+                max-width: 30rem;
+                border: 1px solid $color-pyg-black;
+            }
+
+            & .case {
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 3rem;
+
+                & .header {
+                    border: 2px solid $color-pyg-black;
+
+                    &__data {
+                        display:inline-block;
+                        height: 100%;
+                        width: calc(100% - 21rem)
+                    }
+                    &__item {
+                        display: inline-block;
+                        margin: 1rem;
+                        padding: .5rem 1rem;
+                    }
+
+                    & .case__panel {
+                        display: inline-block;
+                        width: 20rem;
+                        height: 100%;
+
+                        & > * {
+                            display:inline-block;
+                        }
+                    }
+                }
+
+                & .content {
+                    border: 2px solid $color-pyg-black;
+                    border-top: none;
+                    overflow: hidden;
+                    max-height: 0;
+                    transition: max-height .6s ease-in;
+
+                    & .text {
+                        padding: 2rem;
+                        &__main {
+                            margin-bottom: 1rem;
+                        }
+
+                        &__others {
+                            &__item {
+                                // margin-bottom: 1rem;
+                            }
+                        }
+
+                        .text__others_item {
+                            margin-bottom: 1rem;
+                        }
+                    }
+
+                    & .images {
+                        padding: 2rem;
+                        &__main {
+                            margin-bottom: 1rem;
+                        }
+
+                        &__others {
+                            &__item {
+                                margin-bottom: 1rem;
+                            }
+                        }
+
+                        & img {
+                            width: 30rem;
+                            height: auto;
+                        }
+                    }
+
+                    & .keyfacts {
+                        padding: 2rem;
+                        &__item {
+
+                        }
+                    }
+
+                    &.expand {
+                        max-height: 100rem;
+                    }
+                }
+                & .expandContent {
+                    height: 2rem;
+                    text-align: center;
+                    border: 2px solid $color-pyg-black;
+                    border-top: none;
+                    background-color: rgba($color-pyg-primary,.6);
+                    cursor: pointer;
+                    font-size: 2rem;
+                    line-height: 0;
+
+                    &:hover {
+                        & i {transform: translateY(2px);}
+                    }
+
+                    & i {
+                        transition: .6s all;
+                    }
+
+                    &.expanded {
+                        & i {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+    <% include ./partials/header %>
+
+    <title><%= data.newsItem.name %> | <%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main class="newsItemPage u-container--small">
+        <header id="header" class="header">
+            <% if(typeof data.newsItem.mainImage.path !== 'undefined' && data.newsItem.mainImage.path !== 'null') { %>
+            <img class="newsItemPage__image" src="<%= data.newsItem.mainImage.path %>">
+            <div class="newsItemPage__caption"><%= data.newsItem.mainImage.caption %></div>
+            <% } %>
+            <h1 class="newsItemPage__title"><%= data.newsItem.name %></h1>
+        </header>
+        <div id="share">
+            <!-- facebook -->
+            <a class="facebook" href="https://www.facebook.com/share.php?u=<%= data.url %>" target="blank"><i class="fab fa-facebook-f"></i></a>
+            <!-- twitter -->
+            <a class="twitter" href="https://twitter.com/intent/tweet?status=<%= data.urlName %>+<%= data.url %>" target="blank"><i class="fab fa-twitter"></i></a>
+            <!-- google plus -->
+            <a class="googleplus" href="https://plus.google.com/share?url=<%= data.url %>" target="blank"><i class="fab fa-google-plus-g"></i></a>
+            <!-- linkedin -->
+            <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<%= data.url %>&title=<%= data.urlName %>&source=<%= data.url %>" target="blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="newsItemPage__container">
+            <div class="newsItemPage__date"><%= data.newsItem.date %></div>
+            <div class="newsItemPage__content"><%- data.newsItem.content %></div>
+        </div>
+
+        <a class="newsItemPage__back btn btn--primary" href="/news"><div class="btn__text">Back to our News</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

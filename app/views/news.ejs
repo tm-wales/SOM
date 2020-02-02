@@ -1,0 +1,50 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+            <div id="header__hero" class="header__hero header__hero--other contentEditable" style="background-image: url('<%= data.page.content.header.backgroundImage %>')">
+                <div class="header__overlay">
+                    <div class="header__text">
+                        <h1 id="headerTitle" class="header__title__other contentEditable"><%= data.page.content.headerTitle.text %></h1>
+                        <h2 id="headerSubtitle" class="header__subtitle__other contentEditable"><%= data.page.content.headerSubtitle.text %></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="start" class="section newsPage">
+            <div class="newsPage__container">
+            <% for(var i=0; i < data.news.length; i++) { %>
+                <div class="newsPage__item">
+                    <div class="newsPage__title">
+                        <h3><%= data.news[i].name %></h3>
+                        <div class="newsPage__date"><%= data.news[i].date %></div>
+                    </div>
+                    <div class="newsPage__details">
+                        <% if(typeof data.news[i].mainImage.path !== 'undefined' && data.news[i].mainImage.path !== 'null') { %>
+                        <div class="newsPage__imageContainer">
+                            <img class="newsPage__image" src="<%= data.news[i].mainImage.path %>" alt="<%= data.news[i].name %>">
+                            <div class="newsPage__caption"><%= data.news[i].mainImage.caption %></div>
+                        </div>
+                        <% } %>
+
+                        <div class="newsPage__content"><%- data.news[i].content %></div>
+                        <a class="newsPage__link btn" href="/news/<%= data.news[i].name %>"><i class="fas fa-caret-right"></i></a>
+                    </div>
+                </div>
+            <% } %>
+            </div>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

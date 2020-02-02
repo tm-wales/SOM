@@ -1,0 +1,46 @@
+.js--wp-fadeIn {
+    opacity: 0;
+    visibility: hidden;
+
+    &.animated {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+.cases__grid > * {
+    opacity: 0;
+    visibility: hidden;
+
+    &.animated {
+        opacity: 1;
+        visibility: visible
+    }
+}
+.cases__grid a:nth-child(2) {
+    animation-delay: .2s;
+}
+.cases__grid a:nth-child(3) {
+    animation-delay: .4s;
+}
+.cases__grid a:nth-child(4) {
+    animation-delay: .6s;
+}
+.cases__grid a:nth-child(5) {
+    animation-delay: .8s;
+}
+.cases__grid a:nth-child(6) {
+    animation-delay: 1s;
+}
+.cases__grid a:nth-child(7) {
+    animation-delay: 1.2s;
+}
+.cases__grid a:nth-child(8) {
+    animation-delay: 1.4s;
+}
+.cases__grid a:nth-child(9) {
+    animation-delay: 1.6s;
+}
+.cases__grid a:nth-child(10) {
+    animation-delay: 1.8s;
+}

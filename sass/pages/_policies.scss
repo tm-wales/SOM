@@ -1,0 +1,83 @@
+.policy {
+    min-height: 100vh;
+    &__header {
+        margin-top: 10rem;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        color: $color-primary !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: none;
+    }
+
+    &__links {
+        & li {
+            display: inline-block;
+            margin: 2rem 1rem;
+        }
+
+        & a {
+            color: $color-primary;
+
+            &:visited {
+                color: $color-primary-dark;
+            }
+        }
+    }
+
+    &__content {
+        padding: 2rem;
+        font-size: 1.4rem;
+
+        & h1 {
+            margin-top: 2.5rem;
+            margin-left: 0;
+            font-size: 1.6rem;
+            color: $color-black !important;
+            font-weight: bold;
+            letter-spacing: .5rem;
+            text-shadow: none;
+        }
+
+        & h2 {
+            margin-top: 3rem;
+            margin-left: 0;
+            font-size: 1.6rem;
+            color: $color-black !important;
+            font-weight: bold;
+            letter-spacing: .3rem;
+            text-shadow: none;
+        }
+
+        & ul {
+            margin: 1rem 0;
+        }
+        & p {
+            margin: 1rem 0;
+        }
+
+        & li {
+            list-style-type: circle;
+            margin-left: 4rem;
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+
+        & a {
+            color: $color-primary;
+            transition: color .3s;
+            &:hover {
+                font-weight: bold;
+            }
+            &:visited {
+                color: $color-primary-dark;
+            }
+        }
+    }
+}

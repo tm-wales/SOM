@@ -1,0 +1,62 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+            <div id="header__hero" class="header__hero header__hero--other contentEditable" style="background-image: url('<%= data.page.content.header.backgroundImage %>')">
+                <div class="header__overlay">
+                    <div class="header__text">
+                        <h1 id="headerTitle" class="header__title__other contentEditable"><%= data.page.content.headerTitle.text %></h1>
+                        <h2 id="headerSubtitle" class="header__subtitle__other contentEditable"><%= data.page.content.headerSubtitle.text %></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="start" class="section cases">
+            <div class="cases__filter">
+                <button type="button" class="cases__filter__item" data-filter="all">
+                    All
+                </button>
+            <% for(var i=0; i < data.cases.categories.length; i++) { %>
+                <button type="button"  class="cases__filter__item" data-filter=".case__filter__<%= data.cases.categories[i].replace(/\s+/, '') %>">
+                    <%= data.cases.categories[i] %>
+                </button>
+            <% } %>
+            </div>
+            <div class="cases__container">
+                <% for(var i=0; i < data.cases.length; i++) { %>
+                <a class="mix case case__filter__item case__filter__<%= data.cases[i].category.replace(/\s+/, '') %>" href="/case-studies/<%= data.cases[i].name %>">
+                    <div class="case__image" style="background-image: url('<%= data.cases[i].imagePaths.primary %>')">
+                        <div class="case__category"><%= data.cases[i].category %></div>
+                        <div class="case__hidden">
+                            <div class="case__client"><%= data.cases[i].client %></div>
+                            <div class="case__summary"><%= data.cases[i].text.summary %></div>
+                        </div>
+                    </div>
+                    <div class="case__text">
+                        <div class="case__link">
+                            <span class="case__link__text"><%= data.cases[i].name %></span> <span class="case__link__icon"><i class="fas fa-caret-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>
+<script>
+    var containerEl = document.querySelector('.cases__container');
+
+    var mixer = mixitup(containerEl);
+</script>

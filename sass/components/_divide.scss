@@ -1,0 +1,84 @@
+.divide {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include respond('ipad'){
+          background-attachment: initial;
+      }
+
+    &.center {
+        background-position: center;
+    }
+
+    &.left {
+        background-position: left;
+    }
+
+    &.right {
+        background-position: right;
+    }
+
+    color: $color-white;
+
+    &__text {
+        &__box {
+            -ms-flex-item-align: center;
+                align-self: center;
+        }
+
+        &__main {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: .2rem;
+            font-weight: bold;
+            margin: .5rem;
+
+            @include respond('500') {
+                font-size: 1.8rem;
+            }
+        }
+
+        &__sub {
+            font-size: 2rem;
+            letter-spacing: .1rem;
+            margin: .5rem;
+
+            @include respond('500') {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__link {
+        justify-self: end;
+        -ms-flex-item-align: center;
+            align-self: center;
+        margin: .5rem;
+    }
+
+    &__section {
+        position: relative;
+        max-width: 150rem;
+        margin: 0 auto;
+        height: 100%;
+        padding: 3rem;
+    }
+
+    &__box {
+        visibility: hidden;
+        margin-left: 2rem;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+        width: 60rem;
+        padding: 3rem;
+        background-color: $color-primary;
+        max-width: 90%;
+
+        @include respond('500') {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<title><%= data.selectedPolicy.name %> | <%= data.page.title %></title>
+<meta name="description" content="<%= data.page.description %>">
+<meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="app body">
+<% include ../partials/warnings %>
+<% include ../partials/nav %>
+<main class="policy">
+    <header class="policy__header">
+        <ul class="policy__links">
+        <% for(var i=0; i < data.policy.length; i++) { %>
+            <li class="policy__link"><a href="/policies/<%= data.policy[i].route %>"><%= data.policy[i].name %></a></li>
+        <% } %>
+        </ul>
+        <h1 class="policy__title"><%= data.selectedPolicy.title %></h1>
+    </header>
+
+    <section class="policy__content u-container--small">
+        <%- data.selectedPolicy.html %>
+    </section>
+</main>
+<% include ../partials/footer %>
+</body>
+
+<% include ../partials/scriptsFooter %>

@@ -1,0 +1,72 @@
+    <% include ./partials/header %>
+
+    <title><%= data.page.title %></title>
+    <meta name="description" content="<%= data.page.description %>">
+    <meta name="keywords" content="<%= data.page.keywords %>">
+</head>
+
+<body id="fouc" class="body app">
+    <% include ./partials/warnings %>
+    <% include ./partials/nav %>
+    <main>
+        <header id="header" class="header">
+            <div id="header__hero" class="header__hero header__hero--other contentEditable" style="background-image: url('<%= data.page.content.header.backgroundImage %>')">
+                <div class="header__overlay">
+                    <div class="header__text">
+                        <h1 id="headerTitle" class="header__title__other contentEditable"><%= data.page.content.headerTitle.text %></h1>
+                        <h2 id="headerSubtitle" class="header__subtitle__other contentEditable"><%= data.page.content.headerSubtitle.text %></h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="start" class="section jobsPage">
+            <div class="jobsPage__container u-container--small">
+            <div class="jobsPage__mainText">
+                Are you interested in joining SOM, but can't find the right listing for you? Please contact us directly @ <a href="emailTo: info@somodular.co.uk">Seven Oaks Modular!</a>
+            </div>
+            <% for(var i=0; i < data.jobs.length; i++) { %>
+                <% if (data.jobs[i].numberNeeded > 0) { %>
+                    <div class="job__item">
+                        <div class="job__header">
+                            <div class="job__header__name"> <%= data.jobs[i].name %> </div>
+                            <div class="job__header__reference"> Reference: <%= data.jobs[i].reference %></div>
+                            <div class="job__header__num"> Available: <%= data.jobs[i].numberNeeded %> </div>
+                        </div>
+                        <div class="job__details">
+                            <div class="job__details__location"> <%= data.jobs[i].location %> </div>
+                            <% var newDate = 'Test' %>
+                            <% newDate = data.jobs[i].date.toString() %>
+                            <% newDate = newDate.substring(0,15) %>
+                            <div class="job__details__date"> <%= newDate %> </div>
+                            <div class="job__details__description"> <%- data.jobs[i].description %> </div>
+                            <ul class="job__details__resp">
+                                <div>Responsibilities:</div>
+                                <% for(var j=0; j < data.jobs[i].responsibilities.length; j++) { %>
+                                <li class="job__details__resp__item"><%=data.jobs[i].responsibilities[j]%></li>
+                                <% } %>
+                            </ul>
+                            <ul class="job__details__req">
+                                <div>Requirements:</div>
+                                <% for(var k=0; k < data.jobs[i].requirements.length; k++) { %>
+                                <li class="job__details__req__item"><%= data.jobs[i].requirements[k] %></li>
+                                <% } %>
+                            </ul>
+                            <div class="job__details__package">
+                                <div>Package:</div>
+                                <div class="job__details__package__details"><%= data.jobs[i].package %></div>
+                            </div>
+                            <div class="job__details__contact">
+                                Please send your CV quoting the reference, for the attention of <%= data.jobs[i].contact.name %> (<%= data.jobs[i].contact.title %>) to <a href="emailTo:<%=data.jobs[i].contact.email%>"><%= data.jobs[i].contact.email %></a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+            </div>
+        </section>
+    </main>
+    <% include ./partials/footer %>
+</body>
+
+<% include ./partials/scriptsFooter %>

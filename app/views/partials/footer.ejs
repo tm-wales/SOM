@@ -1,0 +1,145 @@
+<footer class="footer">
+    <div class="footer__accreditations">
+        <ul>
+            <li class="footer__accreditation">
+                <a
+                    target="_blank"
+                    class="footer__accreditation__link"
+                    href="https://www.gov.uk/guidance/ce-marking"
+                    ><img
+                        class="footer__accreditation__image"
+                        src="/resources/img/accreditations/ce-mark.png"
+                /></a>
+            </li>
+            <li class="footer__accreditation">
+                <a
+                    target="_blank"
+                    class="footer__accreditation__link"
+                    href="https://www.fsc-uk.org/en-uk/about-fsc/what-is-fsc"
+                    ><img
+                        class="footer__accreditation__image"
+                        src="/resources/img/accreditations/FSC.jpeg"
+                /></a>
+            </li>
+            <li class="footer__accreditation">
+                <a
+                    target="_blank"
+                    class="footer__accreditation__link"
+                    href="http://www.pefc.co.uk/"
+                    ><img
+                        class="footer__accreditation__image"
+                        src="/resources/img/accreditations/pefc.png"
+                /></a>
+            </li>
+            <li class="footer__accreditation">
+                <a
+                    target="_blank"
+                    class="footer__accreditation__link"
+                    href="https://www.structuraltimber.co.uk/members/why-use-an-sta-member/site-safe/"
+                    ><img
+                        class="footer__accreditation__image"
+                        src="/resources/img/accreditations/Site-Safe.jpg"
+                /></a>
+            </li>
+            <li class="footer__accreditation">
+                <a
+                    target="_blank"
+                    class="footer__accreditation__link"
+                    href="https://ssip.org.uk/"
+                    ><img
+                        class="footer__accreditation__image"
+                        src="/resources/img/accreditations/ssip.png"
+                /></a>
+            </li>
+            <li class="footer__accreditation">
+                <a
+                    target="_blank"
+                    class="footer__accreditation__link"
+                    href="https://www.structuraltimber.co.uk/"
+                    ><img
+                        class="footer__accreditation__image"
+                        src="/resources/img/accreditations/STA.png"
+                /></a>
+            </li>
+            <li class="footer__accreditation">
+                <a
+                    target="_blank"
+                    class="footer__accreditation__link"
+                    href="https://www.trada.co.uk/"
+                    ><img
+                        class="footer__accreditation__image"
+                        src="/resources/img/accreditations/trada.jpg"
+                /></a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer__top">
+        <div class="u-container--small footer__top__grid">
+            <a href="/">
+                <img
+                    class="footer__image"
+                    src="/resources/img/logo/logo-full.svg"
+                />
+            </a>
+            <div class="footer__text">
+                <div class="footer__text__title">
+                    About Sevenoaks Modular Limited (Registration No. 10051955)
+                </div>
+                <div class="footer__text__company">
+                    SOM was established in 1996 by Jonathan Hale, when it
+                    started out as a purpose made joinery. Since then, the
+                    company has grown significantly and it now designs and
+                    manufactures innovative timber frame components for both
+                    small and large scale contractors and housing associations
+                    across England and Wales.
+                    <!-- <span>Seven Oaks Modular Limited</span> -->
+                </div>
+            </div>
+            <div class="footer__social">
+                <a class="footer__btn btn btn--primary" href="#contact-us"
+                    ><div class="btn__text">Contact Us</div>
+                    <div class="btn__icon">
+                        <i class="fas fa-caret-right"></i></div
+                ></a>
+                <!-- <a class="footer__btn btn btn--primary" href="/newsletter"><div class="btn__text">News Sign Up</div><div class="btn__icon"><i class="fas fa-caret-right"></i></div></a> -->
+                <ul class="footer__socials">
+                    <% for(var i=0; i < data.social.length; i++) { %>
+                    <li class="footer__socials__link">
+                        <a target="_blank" href="<%= data.social[i].link %>"
+                            ><%- data.social[i].icon %></a
+                        >
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="u-container--small u-relative">
+            <ul class="footer__links">
+                <% for(var i=0; i < data.policy.length; i++) { %>
+                <li class="footer__link">
+                    <a href="/policies/<%= data.policy[i].route %>"
+                        ><%= data.policy[i].name %></a
+                    >
+                </li>
+                <% } %>
+            </ul>
+            <div class="footer__copyright">
+                All contents ©2018 Seven Oaks Modular Limited, Inc. All rights
+                reserved.
+            </div>
+            <a
+                class="techmeleon__link"
+                target="_blank"
+                href="https://www.techmeleon.co.uk"
+            >
+                <img
+                    class="techmeleon__logo"
+                    src="/vendors/pygmy/img/logo/logo-full.svg"
+                />
+            </a>
+        </div>
+    </div>
+</footer>
+<% include ./contactus %>

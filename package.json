@@ -1,0 +1,37 @@
+{
+  "name": "somwebsite",
+  "version": "1.0.0",
+  "description": "SOM website by www.Techmeleon.co.uk",
+  "main": "app.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss public/resources/css/style.css -w",
+    "update:packages": "node pygmy/scripts/wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
+  },
+  "keywords": [
+    "Keywords"
+  ],
+  "author": "Techmeleon",
+  "license": "Private",
+  "devDependencies": {
+    "node-sass": "*"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "connect-mongo": "*",
+    "dateformat": "*",
+    "ejs": "*",
+    "ejs-lint": "*",
+    "express": "^4.16.4",
+    "express-session": "*",
+    "generate-schema": "*",
+    "method-override": "*",
+    "mongoose": "^5.3.4",
+    "morgan": "^1.9.1",
+    "nodemailer": "*",
+    "npm": "^6.4.1",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-local-mongoose": "*",
+    "winston": "^3.1.0"
+  }
+}

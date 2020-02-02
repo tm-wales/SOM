@@ -1,0 +1,59 @@
+.section__benefits {
+    background: rgba($color-white, 0.4);
+    padding: 5rem 0;
+    margin: 0 5rem;
+
+    @include respond('500') {
+        padding: 3rem 0;
+    }
+}
+
+.benefit {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: left;
+    grid-column-gap: 5rem;
+    padding: 2rem 0;
+    margin-top: 2rem;
+
+    @include respond('600') {
+        grid-template-areas:
+            'text'
+            'img';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-row-gap: 3rem;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: $color-primary-dark;
+    }
+
+    &__image {
+        height: auto;
+        width: 30rem;
+
+        @include respond('600') {
+            grid-area: img;
+            justify-self: center;
+        }
+    }
+
+    &__textbox {
+        width: auto;
+        grid-column: auto / span 3;
+
+        @include respond('600') {
+            grid-area: text;
+            grid-column: auto;
+        }
+
+        & p {
+            margin-top: 2rem;
+        }
+    }
+}
